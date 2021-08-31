@@ -1,4 +1,8 @@
-<form class="text-center border border-light p-5 mb-5" (ngSubmit)="addTask()">
+<form
+  *ngIf="showAddTask"
+  class="text-center border border-light p-5 mb-5"
+  (ngSubmit)="addTask()"
+>
   <p class="h4 mb-4">Add Task</p>
 
   <!-- Task -->
@@ -33,5 +37,5 @@
   >
 
   <!-- Sign in button -->
-  <button mdbBtn color="info" type="submit">Add Task</button>
+  <button mdbBtn color="info" type="submit">Submit</button>
 </form>
