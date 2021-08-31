@@ -19,6 +19,12 @@ export class TaskService {
     return this.http.post<Task>(this.taskUrl, task);
   }
 
+  toggleTask(task: Task): Observable<Task> {
+    const url = `${this.taskUrl}/${task.id}`;
+    task.reminder = !task.reminder;
+    return this.http.put<Task>(url, task);
+  }
+
   deleteTask(task: Task): Observable<Task> {
     const url = `${this.taskUrl}/${task.id}`;
     return this.http.delete<Task>(url);
