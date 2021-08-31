@@ -1,12 +1,6 @@
-.main-list {
-  margin-top: 100px;
-}
-
-.header-title {
-  font-size: 30px;
-}
-
-.divider {
-  margin-top: 15px;
-  margin-bottom: 15px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }

@@ -1,8 +1,8 @@
-<mat-list class="main-list">
-  <mat-list-item class="header-title">Todo With Angular</mat-list-item>
-  <mat-list-item><app-button></app-button></mat-list-item>
-  <mat-divider class="divider"></mat-divider>
-  <mat-list-item>Todo</mat-list-item>
-  <mat-divider class="divider"></mat-divider>
-  <mat-list-item>About</mat-list-item>
-</mat-list>
+<header>
+  <h1>{{ title }}</h1>
+  <app-button
+    color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
+    (onToggleAddTask)="toggleAddTask()"
+  ></app-button>
+</header>
