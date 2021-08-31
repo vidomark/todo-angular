@@ -24,7 +24,7 @@ export class AddTaskComponent implements OnInit {
 
     // Emit event
     this.onAddTask.emit(newTask);
-
+    console.log(newTask);
     // Reset form
     this.text = '';
     this.day = '';
