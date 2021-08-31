@@ -14,6 +14,7 @@
     placeholder="Text"
     required
     [(ngModel)]="text"
+    #inputText="ngModel"
   />
 
   <!-- Day & Time -->
@@ -37,5 +38,12 @@
   >
 
   <!-- Sign in button -->
-  <button mdbBtn color="info" type="submit">Submit</button>
+  <button mdbBtn color="info" type="submit" class="mt-2">Submit</button>
+
+  <!-- Invalid input -->
+  <ng-container *ngIf="invalid"
+    ><div class="alert alert-info mt-5" role="alert">
+      Please fill out every field!
+    </div>
+  </ng-container>
 </form>

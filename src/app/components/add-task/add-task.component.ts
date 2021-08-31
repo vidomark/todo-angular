@@ -10,8 +10,9 @@ export class AddTaskComponent implements OnInit {
   @Output() onAddTask = new EventEmitter();
   text: string;
   day: string;
-  reminder = false;
   showAddTask: boolean;
+  reminder = false;
+  invalid = false;
 
   constructor(uiService: UiService) {
     uiService
@@ -22,6 +23,11 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
   addTask(): void {
+    if (!this.text || !this.day) {
+      this.invalid = true;
+      return;
+    }
+
     const newTask = {
       text: this.text,
       day: this.day,
@@ -30,10 +36,11 @@ export class AddTaskComponent implements OnInit {
 
     // Emit event
     this.onAddTask.emit(newTask);
-    console.log(newTask);
+
     // Reset form
     this.text = '';
     this.day = '';
     this.reminder = false;
+    this.invalid = false;
   }
 }
