@@ -1,0 +1,33 @@
+<form class="text-center border border-light p-5 mb-5" (ngSubmit)="addTask()">
+  <p class="h4 mb-4">Add Task</p>
+
+  <!-- Task -->
+  <input
+    type="text"
+    id="text"
+    name="text"
+    class="form-control mb-4"
+    placeholder="Text"
+    required
+    [(ngModel)]="text"
+  />
+
+  <!-- Day & Time -->
+  <input
+    type="text"
+    id="day"
+    name="day"
+    class="form-control mb-4"
+    placeholder="Day & Time"
+    required
+    [(ngModel)]="day"
+  />
+
+  <!-- Reminder -->
+  <mdb-checkbox id="reminder" name="reminder" [checked]="reminder"
+    >Set Reminder</mdb-checkbox
+  >
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" type="submit">Add Task</button>
+</form>
